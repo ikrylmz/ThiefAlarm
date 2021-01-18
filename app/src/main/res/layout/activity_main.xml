@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/primary_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:visibility="visible"
+    tools:context=".MainActivity">
+
+
+    <com.skyfishjy.library.RippleBackground
+        android:id="@+id/content"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:rb_color="#DB8B00"
+        app:rb_duration="2700"
+        app:rb_radius="22dp"
+        app:rb_rippleAmount="1"
+        app:rb_scale="10"
+        app:rb_strokeWidth="20dp"
+        app:rb_type="fillRipple">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp">
+
+            <com.skyfishjy.library.RippleBackground
+                android:id="@+id/content_alert"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:rb_color="#DB8B00"
+                app:rb_duration="1000"
+                app:rb_radius="30dp"
+                app:rb_rippleAmount="2"
+                app:rb_scale="10"
+                app:rb_strokeWidth="20dp"
+                app:rb_type="fillRipple" />
+
+            <ImageButton
+                android:id="@+id/btn_close_screen"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="24dp"
+                android:background="@android:color/transparent"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/light_2" />
+
+            <TextView
+
+                android:id="@+id/txt_active"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Active"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/centerImage"
+                app:layout_constraintVertical_bias="0.120000005" />
+
+            <ImageView
+                android:id="@+id/centerImage"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/btn_orange"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_conversion_absoluteHeight="150dp"
+                tools:layout_conversion_absoluteWidth="150dp" />
+
+            <TextView
+                android:id="@+id/txt_stop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stop"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="@android:color/white"
+                android:textSize="33sp"
+                android:textStyle="bold"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_conversion_absoluteHeight="41dp"
+                tools:layout_conversion_absoluteWidth="67dp" />
+
+            <TextView
+                android:id="@+id/txt_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="@android:color/white"
+                android:textSize="33sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_conversion_absoluteHeight="41dp"
+                tools:layout_conversion_absoluteWidth="67dp" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="vertical"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/txt_low"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|top"
+                    android:text="Low"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txt_high"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|top"
+                    android:text="High"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp" />
+
+                <SeekBar
+                    android:id="@+id/seekbar_sensivity"
+                    android:layout_width="140dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:indeterminate="false"
+                    android:layerType="software"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/track"
+                    android:thumb="@drawable/thumb" />
+
+                <TextView
+                    android:id="@+id/txt_sensivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:text="Sensivity"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+
+            </FrameLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.skyfishjy.library.RippleBackground>
+
+
+</FrameLayout>
